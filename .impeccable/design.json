@@ -1,0 +1,441 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-31T21:17:48Z",
+  "title": "Design System: Door Blue Space",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Muted Cobalt Door",
+        "canonical": "#355f91",
+        "tonalRamp": [
+          "#1a3049",
+          "#294a70",
+          "#355f91",
+          "#5278a5",
+          "#7392b4",
+          "#99aec5",
+          "#c0cad8",
+          "#e7ebf0"
+        ]
+      },
+      "night-threshold": {
+        "role": "primary",
+        "displayName": "Night Threshold",
+        "canonical": "#304a64",
+        "tonalRamp": [
+          "#182532",
+          "#263b50",
+          "#304a64",
+          "#4d657c",
+          "#6e8396",
+          "#94a4b3",
+          "#bbc4cc",
+          "#e5e8eb"
+        ]
+      },
+      "atmospheric-peach-surface": {
+        "role": "secondary",
+        "displayName": "Atmospheric Peach Surface",
+        "canonical": "#e8d8c5",
+        "tonalRamp": [
+          "#1e1812",
+          "#3f3429",
+          "#625244",
+          "#867363",
+          "#aa9582",
+          "#c6b4a1",
+          "#dccbbb",
+          "#e8d8c5"
+        ]
+      },
+      "sand-secondary": {
+        "role": "secondary",
+        "displayName": "Sand Secondary",
+        "canonical": "#d9b995",
+        "tonalRamp": [
+          "#20180f",
+          "#463421",
+          "#6d5337",
+          "#947350",
+          "#b38e69",
+          "#c8a984",
+          "#d9b995",
+          "#f0dfca"
+        ]
+      },
+      "muted-foliage": {
+        "role": "tertiary",
+        "displayName": "Muted Foliage",
+        "canonical": "#677a78",
+        "tonalRamp": [
+          "#202625",
+          "#3d4948",
+          "#536260",
+          "#677a78",
+          "#81918f",
+          "#a0acab",
+          "#c3cbca",
+          "#ebeeee"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Warm Ivory Paper",
+        "canonical": "#f8f1e6",
+        "tonalRamp": [
+          "#1c1915",
+          "#39342d",
+          "#5a5247",
+          "#7d7161",
+          "#a2937f",
+          "#c2b39f",
+          "#dfd3c1",
+          "#f8f1e6"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Warm Architectural Line",
+        "canonical": "#cdbdaa",
+        "tonalRamp": [
+          "#1c1916",
+          "#3b352e",
+          "#5c544a",
+          "#7e7366",
+          "#9e9284",
+          "#b8aa9a",
+          "#cdbdaa",
+          "#eee7df"
+        ]
+      },
+      "warm-white": {
+        "role": "neutral",
+        "displayName": "Warm White",
+        "canonical": "#fff9ef",
+        "tonalRamp": [
+          "#1d1a16",
+          "#3b3630",
+          "#5c544a",
+          "#7f7466",
+          "#a39888",
+          "#c5b9aa",
+          "#e5dbce",
+          "#fff9ef"
+        ]
+      },
+      "secondary-text": {
+        "role": "neutral",
+        "displayName": "Secondary Blue-Gray Text",
+        "canonical": "#526a76",
+        "tonalRamp": [
+          "#1c2529",
+          "#34434b",
+          "#526a76",
+          "#6d828c",
+          "#8b9ca4",
+          "#aab6bc",
+          "#cbd2d6",
+          "#edf0f1"
+        ]
+      },
+      "warm-white-24": {
+        "role": "neutral",
+        "displayName": "Warm White 24",
+        "canonical": "rgb(255 249 239 / 24%)",
+        "tonalRamp": [
+          "rgb(29 26 22 / 24%)",
+          "rgb(59 54 48 / 24%)",
+          "rgb(92 84 74 / 24%)",
+          "rgb(127 116 102 / 24%)",
+          "rgb(163 152 136 / 24%)",
+          "rgb(197 185 170 / 24%)",
+          "rgb(229 219 206 / 24%)",
+          "rgb(255 249 239 / 24%)"
+        ]
+      },
+      "warm-white-38": {
+        "role": "neutral",
+        "displayName": "Warm White 38",
+        "canonical": "rgb(255 249 239 / 38%)",
+        "tonalRamp": [
+          "rgb(29 26 22 / 38%)",
+          "rgb(59 54 48 / 38%)",
+          "rgb(92 84 74 / 38%)",
+          "rgb(127 116 102 / 38%)",
+          "rgb(163 152 136 / 38%)",
+          "rgb(197 185 170 / 38%)",
+          "rgb(229 219 206 / 38%)",
+          "rgb(255 249 239 / 38%)"
+        ]
+      },
+      "warm-white-62": {
+        "role": "neutral",
+        "displayName": "Warm White 62",
+        "canonical": "rgb(255 249 239 / 62%)",
+        "tonalRamp": [
+          "rgb(29 26 22 / 62%)",
+          "rgb(59 54 48 / 62%)",
+          "rgb(92 84 74 / 62%)",
+          "rgb(127 116 102 / 62%)",
+          "rgb(163 152 136 / 62%)",
+          "rgb(197 185 170 / 62%)",
+          "rgb(229 219 206 / 62%)",
+          "rgb(255 249 239 / 62%)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage invitation with deliberately tight line breaks."
+      },
+      "display-mobile": {
+        "displayName": "Display Mobile",
+        "purpose": "The implemented display override at 38rem and below."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section openings."
+      },
+      "headline-mobile": {
+        "displayName": "Headline Mobile",
+        "purpose": "The implemented section-heading override at 38rem and below."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Coworking, rental, and similarly important subsection titles."
+      },
+      "brand-title": {
+        "displayName": "Brand Title",
+        "purpose": "The official Door Blue Space name in the shared header."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "General visitor information."
+      },
+      "body-large": {
+        "displayName": "Body Large",
+        "purpose": "Longer explanatory copy in event, use, and closing sections."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Concise explanation beneath the opening display headline."
+      },
+      "feature-copy": {
+        "displayName": "Feature Copy",
+        "purpose": "Short decisive statements inside dark action panels."
+      },
+      "route-copy": {
+        "displayName": "Route Copy",
+        "purpose": "Numbered physical arrival directions."
+      },
+      "door-lettering": {
+        "displayName": "Door Lettering",
+        "purpose": "Stacked words inside the final abstract arrival door."
+      },
+      "door-number": {
+        "displayName": "Door Number",
+        "purpose": "The small redundant address number inside the abstract hero door."
+      },
+      "navigation": {
+        "displayName": "Navigation",
+        "purpose": "Quiet public-route labels in the shared header."
+      },
+      "action": {
+        "displayName": "Action",
+        "purpose": "Primary calls to action and strong text links."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Secondary operational context below the hero actions."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact uppercase hours and arrangement facts."
+      },
+      "micro-label": {
+        "displayName": "Micro Label",
+        "purpose": "Redundant decorative labels on the vertical route rail only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "action-color",
+        "value": "220ms ease",
+        "purpose": "Color and background reversal on filled primary actions."
+      },
+      {
+        "name": "door-open",
+        "value": "520ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Perspective rotation of the hero door when its paired primary action is hovered or focused."
+      },
+      {
+        "name": "route-scroll",
+        "value": "scroll-behavior: smooth",
+        "purpose": "Anchor navigation through the page; resolves to auto under reduced motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Disables door/action transitions and smooth scrolling without hiding content."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "home-stack",
+        "value": "52rem"
+      },
+      {
+        "name": "navigation-stack",
+        "value": "48rem"
+      },
+      {
+        "name": "mobile-linearize",
+        "value": "38rem"
+      },
+      {
+        "name": "shell-compact",
+        "value": "32rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The dominant Telegram or contact action, filled at rest and outlined on hover.",
+      "html": "<a class=\"ds-primary-action\" href=\"#\">See what’s happening on Telegram</a>",
+      "css": ".ds-primary-action { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0.85rem 1.1rem; border: 1px solid var(--accent-color, #355f91); border-radius: 0.7rem; color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 800; line-height: 1.5; text-decoration: none; transition: color 220ms ease, background 220ms ease; } .ds-primary-action:hover { color: var(--accent-color, #355f91); background: transparent; } .ds-primary-action:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-primary-action { transition: none; } }"
+    },
+    {
+      "name": "Quiet Action Link",
+      "kind": "button",
+      "description": "A strong underlined secondary path with the shipped 44px minimum target.",
+      "html": "<a class=\"ds-quiet-action\" href=\"#\">Find the blue door</a>",
+      "css": ".ds-quiet-action { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 800; line-height: 1.5; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; } .ds-quiet-action:hover { text-decoration: underline; } .ds-quiet-action:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; }"
+    },
+    {
+      "name": "Main Navigation",
+      "kind": "nav",
+      "description": "The official name and four public routes; below 48rem the links stay on one horizontally scrollable line.",
+      "html": "<header class=\"ds-site-header\"><a class=\"ds-brand\" href=\"#\" aria-label=\"Door Blue Space home\">Door Blue Space</a><nav class=\"ds-navigation\" aria-label=\"Main navigation\"><a href=\"#events\">Events</a><a href=\"#use-space\">Use the space</a><a href=\"#find-us\">Find us</a><a href=\"#donations\">Donations</a></nav></header>",
+      "css": ".ds-site-header { display: flex; align-items: center; justify-content: space-between; gap: 2rem; min-height: 5rem; padding-inline: 1.5rem; border-bottom: 1px solid var(--soft-slate-line, #cdbdaa); color: var(--accent-color, #355f91); background: var(--cool-plaster, #f8f1e6); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-brand { flex: 0 0 auto; padding-block: 0.65rem; color: inherit; font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.5; text-decoration: none; } .ds-navigation { display: flex; align-items: center; justify-content: flex-end; gap: 0.35rem; font-size: 0.9rem; line-height: 1.5; } .ds-navigation a { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: 0.65rem; color: inherit; white-space: nowrap; text-decoration: none; } .ds-navigation a:hover { text-decoration: underline; } .ds-brand:focus-visible, .ds-navigation a:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (max-width: 48rem) { .ds-site-header { align-items: flex-start; flex-direction: column; gap: 0; padding-block: 0.75rem; } .ds-navigation { justify-content: flex-start; width: 100%; margin-inline: -0.65rem; overflow-x: auto; scrollbar-width: none; } .ds-navigation::-webkit-scrollbar { display: none; } } @media (max-width: 32rem) { .ds-site-header { padding-inline: 1rem; } }"
+    },
+    {
+      "name": "Event Action Panel",
+      "kind": "card",
+      "refersTo": "event-action-panel",
+      "description": "A square Muted Cobalt Door panel that turns current-event context into a clear programme action.",
+      "html": "<aside class=\"ds-event-action\"><p>See something you like? Come by—no advance registration is needed.</p><a href=\"#\">Open the current programme</a></aside>",
+      "css": ".ds-event-action { max-width: 36rem; padding: clamp(1.5rem, 4vw, 2.5rem); color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-event-action p { margin: 0 0 2.5rem; font-size: clamp(1.35rem, 2.5vw, 2rem); font-weight: 700; letter-spacing: normal; line-height: 1.15; } .ds-event-action a { display: inline-flex; align-items: center; min-height: 2.75rem; color: var(--clean-white, #fff9ef); font-size: 1rem; font-weight: 800; line-height: 1.5; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; } .ds-event-action a:hover { text-decoration: underline; } .ds-event-action a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }"
+    },
+    {
+      "name": "Use Row",
+      "kind": "card",
+      "description": "An open ruled row for coworking or rental facts; it stays split at tablet widths and becomes linear at 38rem.",
+      "html": "<article class=\"ds-use-row\"><div><h3>Cowork here</h3><p class=\"ds-use-facts\">Weekdays · 10:00–18:00 · By arrangement</p></div><div><p>Write before you come. The apartment may be rented on the day, so coworking availability needs to be confirmed.</p><a href=\"#\">Ask about coworking</a></div></article>",
+      "css": ".ds-use-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(18rem, 7fr); gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(2rem, 5vw, 4rem); border-top: 1px solid var(--accent-color, #355f91); border-bottom: 1px solid var(--accent-color, #355f91); color: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-use-row h3 { margin: 0 0 0.75rem; font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; } .ds-use-row > div:last-child { max-width: 38rem; } .ds-use-row > div:last-child p { margin: 0 0 1.25rem; color: var(--secondary-text, #526a76); font-size: 1.05rem; line-height: 1.65; } .ds-use-facts { margin: 0; color: var(--secondary-text, #526a76); font-size: 0.85rem; font-weight: 800; line-height: 1.5; text-transform: uppercase; } .ds-use-row a { display: inline-flex; align-items: center; min-height: 2.75rem; color: inherit; font-weight: 800; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; } .ds-use-row a:hover { text-decoration: underline; } .ds-use-row a:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (max-width: 52rem) { .ds-use-row { grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); } } @media (max-width: 38rem) { .ds-use-row { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2.5rem; } }"
+    },
+    {
+      "name": "Route Steps",
+      "kind": "custom",
+      "description": "Connected numbered directions on Night Threshold, always preserving one literal linear route.",
+      "html": "<ol class=\"ds-route-steps\"><li><span class=\"ds-route-number\" aria-hidden=\"true\">1</span><span>Pass the construction site.</span></li><li><span class=\"ds-route-number\" aria-hidden=\"true\">2</span><span>Use the Valeo entrance near the barrier.</span></li><li><span class=\"ds-route-number\" aria-hidden=\"true\">3</span><span>Go up to the fourth floor.</span></li></ol>",
+      "css": ".ds-route-steps { margin: 0; padding: 2rem; color: var(--clean-white, #fff9ef); background: var(--night-threshold, #304a64); font-family: Inter, ui-sans-serif, system-ui, sans-serif; list-style: none; } .ds-route-steps li { position: relative; display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; align-items: start; min-height: 5.5rem; padding-bottom: 1.5rem; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.35; } .ds-route-steps li:not(:last-child)::after { position: absolute; top: 2.75rem; bottom: 0; left: 1.35rem; width: 1px; background: var(--clean-white-38, rgb(255 249 239 / 38%)); content: \"\"; } .ds-route-number { display: grid; place-items: center; width: 2.75rem; aspect-ratio: 1; border: 1px solid var(--clean-white-62, rgb(255 249 239 / 62%)); border-radius: 50%; font-size: 0.82rem; font-weight: 800; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Hero Threshold Door",
+      "kind": "custom",
+      "refersTo": "threshold-panel",
+      "description": "An Atmospheric Peach route rail and Warm Architectural Line frame around the Muted Cobalt Door; focusing or hovering the paired action opens it slightly in perspective.",
+      "html": "<div class=\"ds-threshold-demo\"><a class=\"ds-threshold-trigger\" href=\"#\">See what’s happening on Telegram</a><div class=\"ds-threshold\" aria-hidden=\"true\"><div class=\"ds-threshold-route\"><span>street</span><span>fourth floor</span><span>turn right</span></div><div class=\"ds-door-frame\"><div class=\"ds-door\"><span class=\"ds-door-number\">14</span><span class=\"ds-door-handle\"></span></div></div></div></div>",
+      "css": ".ds-threshold-demo { display: grid; gap: 1rem; width: min(100%, 25rem); color: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-threshold-trigger { display: inline-flex; align-items: center; justify-content: center; justify-self: start; min-height: 3.25rem; padding: 0.85rem 1.1rem; border: 1px solid var(--accent-color, #355f91); border-radius: 0.7rem; color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); font-weight: 800; text-decoration: none; transition: color 220ms ease, background 220ms ease; } .ds-threshold-trigger:hover { color: var(--accent-color, #355f91); background: transparent; } .ds-threshold-trigger:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } .ds-threshold { position: relative; display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); min-height: 34rem; padding: 1rem; color: var(--clean-white, #fff9ef); background: var(--apartment-blue-haze, #e8d8c5); overflow: hidden; } .ds-threshold-route { display: flex; align-items: center; justify-content: space-between; flex-direction: column; padding-block: 0.5rem; color: var(--accent-color, #355f91); font-size: 0.72rem; font-weight: 800; line-height: 1.5; text-transform: uppercase; writing-mode: vertical-rl; } .ds-threshold-route::before { position: absolute; top: 2rem; bottom: 2rem; left: 3.2rem; width: 1px; background: var(--soft-slate-line, #cdbdaa); content: \"\"; } .ds-door-frame { display: flex; align-items: flex-end; justify-content: center; padding: clamp(1rem, 3vw, 2.5rem) clamp(0.5rem, 2vw, 1.5rem) 0; border: 1px solid var(--soft-slate-line, #cdbdaa); border-bottom: 0; } .ds-door { position: relative; width: min(100%, 16rem); height: 88%; min-height: 26rem; color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); transform-origin: left center; transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-threshold-demo:has(.ds-threshold-trigger:hover) .ds-door, .ds-threshold-demo:has(.ds-threshold-trigger:focus-visible) .ds-door { transform: perspective(70rem) rotateY(-7deg); } .ds-door-number { position: absolute; top: 1.25rem; left: 1.25rem; font-size: 0.8rem; font-weight: 800; } .ds-door-handle { position: absolute; top: 52%; right: 1.25rem; width: 0.65rem; aspect-ratio: 1; border-radius: 50%; background: var(--clean-white, #fff9ef); } @media (max-width: 38rem) { .ds-threshold { grid-template-columns: 3.25rem minmax(0, 1fr); min-height: 30rem; padding: 0.75rem; } .ds-threshold-route::before { left: 2.35rem; } .ds-door { min-height: 23rem; } } @media (prefers-reduced-motion: reduce) { .ds-threshold-trigger, .ds-door { transition: none; } }"
+    },
+    {
+      "name": "Arrival Door",
+      "kind": "custom",
+      "refersTo": "arrival-door",
+      "description": "The route’s large Muted Cobalt Door payoff with stacked lettering and a practical contact footer.",
+      "html": "<section class=\"ds-arrival\"><div class=\"ds-arrival-door\" aria-hidden=\"true\"><span>Door</span><span>Blue</span><span>Space</span><i></i></div><div class=\"ds-arrival-copy\"><p>Fourth floor. Turn right. You’re there.</p><a href=\"#\">Need help finding us? Message on Telegram</a></div></section>",
+      "css": ".ds-arrival { display: grid; grid-template-rows: 1fr auto; min-height: 42rem; color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-arrival-door { position: relative; display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--clean-white-24, rgb(255 249 239 / 24%)); border-bottom: 0; font-size: clamp(3.5rem, 8vw, 6rem); font-weight: 800; letter-spacing: -0.04em; line-height: 0.78; } .ds-arrival-door i { position: absolute; top: 52%; right: clamp(1.5rem, 4vw, 3rem); width: 0.8rem; aspect-ratio: 1; border-radius: 50%; background: var(--clean-white, #fff9ef); } .ds-arrival-copy { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; padding: 1.5rem clamp(1.5rem, 4vw, 3rem); border-top: 1px solid var(--clean-white-24, rgb(255 249 239 / 24%)); } .ds-arrival-copy p { margin: 0; color: var(--soft-slate-line, #cdbdaa); line-height: 1.5; } .ds-arrival-copy a { display: inline-flex; align-items: center; justify-self: end; min-height: 2.75rem; color: var(--clean-white, #fff9ef); font-weight: 800; text-align: right; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; } .ds-arrival-copy a:hover { text-decoration: underline; } .ds-arrival-copy a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; } @media (max-width: 38rem) { .ds-arrival { min-height: 34rem; } .ds-arrival-copy { grid-template-columns: 1fr; gap: 0.75rem; } .ds-arrival-copy a { justify-self: start; text-align: left; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Creative Apartment Guide",
+    "overview": "The interface should feel like entering the spacious apartment of a creative family through a watercolor interior study: calm, direct, welcoming, and full of room to look around. It guides rather than sells, using oversized type, architectural divisions, and generous warm-ivory space to turn practical information into a deliberate journey.\n\nIts creativity is quiet rather than decorative. Muted cobalt-blue doors and type sit against warm paper, sand and peach architecture, and restrained blue-gray foliage notes. “The Route Becomes the Story” is the homepage’s shipped expression of this established world—not a replacement identity: information progresses from invitation, through current uses, into literal numbered wayfinding and an abstract arrival door.",
+    "keyCharacteristics": [
+      "Spacious, low-density compositions with one dominant message at a time.",
+      "A watercolor-interior palette grounded by muted cobalt, warm ivory paper, peach plaster, sand, and blue-gray foliage.",
+      "Oversized, tightly led Inter headlines paired with plainspoken body copy.",
+      "Asymmetric editorial grids that resolve into a clear linear journey on small screens.",
+      "Flat tonal depth: warm paper, atmospheric surfaces, dark thresholds, and dividers replace shadows.",
+      "Literal route cues and abstract door forms used only when they reinforce place and arrival."
+    ],
+    "rules": [
+      {
+        "name": "The Watercolor Interior Rule",
+        "body": "Build hierarchy from Muted Cobalt Door, Night Threshold, Warm Ivory Paper, peach and sand architecture, and restrained blue-gray notes; preserve their muted relationship rather than introducing a sharper accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Creativity Rule",
+        "body": "Avoid neon nightlife color and polished corporate-SaaS gradients; creativity comes from watercolor warmth, space, scale, route, and the physical blue-door association.",
+        "section": "colors"
+      },
+      {
+        "name": "The Scale Creates Atmosphere Rule",
+        "body": "Use oversized, tightly led headings for identity; keep supporting copy modest and direct so the hierarchy never feels promotional.",
+        "section": "typography"
+      },
+      {
+        "name": "The Small Type Must Guide Rule",
+        "body": "The intentional 0.72rem and 0.85rem sizes belong to redundant route cues and compact facts; actions retain readable labels and at least 2.75rem-high targets.",
+        "section": "typography"
+      },
+      {
+        "name": "The Room Around the Message Rule",
+        "body": "Preserve generous empty space around short, important statements; do not fill the shell simply because width is available.",
+        "section": "layout"
+      },
+      {
+        "name": "The Route Resolves to Arrival Rule",
+        "body": "When a surface explains how to reach the place, let sequence, line, and numbering converge on a threshold or door; never use the route motif as unrelated decoration.",
+        "section": "layout"
+      },
+      {
+        "name": "The Apartment Plane Rule",
+        "body": "Keep surfaces shadowless at rest; separate them with color, distance, framing, and dividers so they feel like walls, paper, doors, and objects sharing one real place.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft Object Rule",
+        "body": "Reserve rounded corners for controls, compact status objects, and circular wayfinding markers; keep narrative panels and thresholds rectilinear.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Focus Is Structural Rule",
+        "body": "Keyboard focus must remain at least as explicit as hover, including the door response paired to the primary action; never remove the visible ring because a component already changes color.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do let one oversized headline establish each section before introducing practical details.",
+      "Do use Muted Cobalt Door, Night Threshold, Warm Ivory Paper, peach and sand architecture, Warm White alpha, and blue-gray supporting tones as one restrained watercolor-interior palette.",
+      "Do use asymmetric desktop grids that become an intentional single reading path at the documented breakpoints.",
+      "Do preserve the exact route-step order, connected markers, and final blue-door payoff when presenting arrival directions.",
+      "Do keep all interactive targets at least 2.75rem high and retain the 3px/4px focus treatment.",
+      "Do keep content fully understandable when motion is reduced or unavailable."
+    ],
+    "donts": [
+      "Don't introduce shadows as the default way to separate surfaces.",
+      "Don't make the interface resemble a corporate SaaS dashboard or a neon nightlife promotion.",
+      "Don't add ornamental bohemian decoration to signal creativity; use scale, space, architecture, and content instead.",
+      "Don't turn the homepage into a field of rounded cards; route panels and thresholds are intentionally square.",
+      "Don't wrap the small-screen navigation or invent a menu; preserve its horizontal overflow behavior until navigation is deliberately redesigned.",
+      "Don't introduce an unrelated saturated accent or cool the canvas back toward blue-gray without deliberately revisiting the Watercolor Interior Rule."
+    ]
+  }
+}
