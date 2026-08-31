@@ -87,14 +87,14 @@
     padding: 2rem;
     border-radius: 1rem;
     color: var(--accent-color);
-    background: #e8eef7;
+    background: var(--apartment-blue-haze);
   }
   dl {
     margin: 0;
   }
   dl div {
     padding: 1rem 0;
-    border-top: 1px solid rgb(16 42 67 / 25%);
+    border-top: 1px solid var(--soft-slate-line);
   }
   dt {
     margin-bottom: 0.35rem;
@@ -124,7 +124,7 @@
     font-size: 0.85rem;
   }
   button:hover {
-    color: white;
+    color: var(--clean-white);
     background: var(--accent-color);
   }
   .tooltip {
@@ -134,7 +134,7 @@
     z-index: 1;
     padding: 0.45rem 0.6rem;
     border-radius: 0.4rem;
-    color: white;
+    color: var(--clean-white);
     background: var(--accent-color);
     font-size: 0.8rem;
     white-space: nowrap;
