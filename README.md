@@ -34,6 +34,19 @@ npm run build
 npx wrangler dev
 ```
 
+## Localization
+
+The public interface supports English (`en`), Russian (`ru`), and Georgian (`ka`).
+On the first visit, the server chooses the first supported language from the browser's
+`Accept-Language` header and falls back to English. A visitor's explicit choice is
+stored under `doorblue_locale` in both `localStorage` and a functional cookie so SSR
+can render the preferred language without a flash of different content.
+
+Translation dictionaries live in `src/lib/translations/en.json`, `ru.json`, and
+`ka.json`; locale types and resolution helpers remain in `src/lib/i18n.ts`. Russian
+and Georgian translations are drafts and should be reviewed by native speakers
+before final publication.
+
 ## Deployment
 
 ```sh

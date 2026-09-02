@@ -1,0 +1,133 @@
+{
+  "common": {
+    "language": {
+      "label": "Choose language",
+      "current": "Current language"
+    },
+    "navigation": {
+      "brandHomeLabel": "Door Blue Space home",
+      "mainLabel": "Main navigation",
+      "events": "Events",
+      "useSpace": "Use the space",
+      "findUs": "Find us",
+      "supportUs": "Support us"
+    },
+    "footer": {
+      "city": "Tbilisi",
+      "telegramLink": "Events and contact on Telegram"
+    }
+  },
+  "home": {
+    "metadata": {
+      "title": "Door Blue Space · Creative apartment in Tbilisi",
+      "description": "A creatively designed apartment in Tbilisi for events, coworking and community. See current events on Telegram and find the blue door."
+    },
+    "hero": {
+      "title": "Come through the blue door.",
+      "lead": "Door Blue Space is a creatively designed apartment in Tbilisi for films, music, workshops and community gatherings.",
+      "telegramAction": "See what’s happening on Telegram",
+      "directionsAction": "Find the blue door",
+      "note": "Events are announced on Telegram. When one is on, you can simply come—no advance registration.",
+      "route": [
+        "street",
+        "fourth floor",
+        "turn right"
+      ]
+    },
+    "events": {
+      "title": "What’s happening lives on Telegram.",
+      "description": "Film nights, music, workshops and gatherings are announced there with current dates and details.",
+      "invitation": "See something you like? Come by—no advance registration is needed.",
+      "programmeAction": "Open the current programme"
+    },
+    "uses": {
+      "title": "The apartment changes with the day.",
+      "description": "Events bring people together. On quieter weekdays, the same rooms can become a place to work—or a place for your own gathering.",
+      "coworking": {
+        "title": "Cowork here",
+        "facts": "Weekdays · 10:00–18:00 · By arrangement",
+        "description": "Write before you come. The apartment may be rented on the day, so coworking availability needs to be confirmed.",
+        "action": "Ask about coworking"
+      },
+      "rental": {
+        "title": "Rent the space",
+        "facts": "Availability · By arrangement",
+        "description": "If you would like to use Door Blue Space for your own gathering, write in advance to ask about availability.",
+        "action": "Ask about renting"
+      }
+    },
+    "journey": {
+      "title": "The last turn is blue.",
+      "address": "14 Luarsab Botsvadze Street, Tbilisi",
+      "waypoints": [
+        "Pass the construction site.",
+        "Use the Valeo entrance near the barrier.",
+        "Go up to the fourth floor.",
+        "Turn right.",
+        "Find the blue door."
+      ],
+      "arrival": "Fourth floor. Turn right. You’re there.",
+      "helpAction": "Need help finding us? Message on Telegram"
+    },
+    "closing": {
+      "title": "We’ll meet you on the other side.",
+      "description": "Come to announced events without registering in advance. Arrange coworking or rental before you arrive.",
+      "contactAction": "See events and contact us",
+      "supportAction": "Support Door Blue Space"
+    }
+  },
+  "donations": {
+    "metadata": {
+      "title": "Support Door Blue Space · Donations",
+      "description": "Support Door Blue Space with the upkeep of the apartment, rent and community events. Find Bank of Georgia transfer details."
+    },
+    "hero": {
+      "backAction": "Back to the main page",
+      "title": "Support Door Blue Space.",
+      "description": "Use the bank details below to make a transfer in Georgian lari.",
+      "note": "A place kept in motion"
+    },
+    "transfer": {
+      "title": "Make a bank transfer.",
+      "instructions": "The account is in Georgian lari. Copy the details below, then complete the transfer in your banking app.",
+      "bankName": "Bank of Georgia",
+      "currency": "GEL · Georgian lari",
+      "accountLabel": "Account",
+      "accountHolderLabel": "Account holder",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyManually": "Copy manually",
+      "copyAccountLabel": "Copy account number",
+      "copyAccountHolderLabel": "Copy account holder",
+      "copiedStatus": "Copied to your clipboard.",
+      "copyError": "Couldn’t copy automatically. Select the value and copy it manually.",
+      "feesLabel": "Transfer fees",
+      "feesTitle": "About the fee",
+      "sameBankFee": "Transfers from Bank of Georgia have no fee.",
+      "otherBankFee": "Transfers from other banks have a 1 GEL fee.",
+      "unavailableTitle": "Transfer details are temporarily unavailable.",
+      "unavailableDescription": "Message us on Telegram and we’ll send you the current donation details.",
+      "unavailableAction": "Ask for donation details",
+      "helpPrompt": "Questions before you transfer?",
+      "helpAction": "Message Door Blue Space on Telegram"
+    },
+    "support": {
+      "title": "What your support helps us do.",
+      "description": "Every contribution supports the practical work of keeping a creative, shared place running in Tbilisi.",
+      "items": [
+        {
+          "title": "Care for the apartment",
+          "copy": "Support helps with the everyday upkeep of the rooms we share."
+        },
+        {
+          "title": "Pay the rent",
+          "copy": "It helps keep Door Blue Space available as a place for the community."
+        },
+        {
+          "title": "Organise events",
+          "copy": "It helps us bring films, music, workshops and gatherings into the space."
+        }
+      ]
+    }
+  }
+}

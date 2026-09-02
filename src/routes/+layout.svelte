@@ -1,10 +1,23 @@
 <script lang="ts">
   import { page } from "$app/state";
+  import { onMount, type Snippet } from "svelte";
+  import LanguageSwitcher from "$lib/components/LanguageSwitcher.svelte";
   import { site } from "$lib/data/site";
+  import { I18nState, setI18n } from "$lib/i18n.svelte";
+  import type { Locale } from "$lib/i18n";
 
-  let { children } = $props();
+  interface Props {
+    data: { locale: Locale };
+    children: Snippet;
+  }
 
+  let { data, children }: Props = $props();
+
+  const i18n = new I18nState(() => data.locale);
   const isDonationsPage = $derived(page.url.pathname === "/donations");
+
+  setI18n(i18n);
+  onMount(() => i18n.syncFromBrowser());
 </script>
 
 <svelte:head>
@@ -12,20 +25,26 @@
 </svelte:head>
 
 <header class="site-header">
-  <a class="brand" href="/" aria-label="Door Blue Space home">{site.name}</a>
-  <nav aria-label="Main navigation">
+  <a
+    class="brand"
+    href="/"
+    aria-label={i18n.messages.common.navigation.brandHomeLabel}>{site.name}</a
+  >
+  <nav aria-label={i18n.messages.common.navigation.mainLabel}>
     <div class="section-navigation">
-      <a href="/#events">Events</a>
-      <a href="/#use-space">Use the space</a>
-      <a href="/#find-us">Find us</a>
+      <a href="/#events">{i18n.messages.common.navigation.events}</a>
+      <a href="/#use-space">{i18n.messages.common.navigation.useSpace}</a>
+      <a href="/#find-us">{i18n.messages.common.navigation.findUs}</a>
     </div>
     <a
       class="support-link"
       class:current={isDonationsPage}
       href="/donations"
-      aria-current={isDonationsPage ? "page" : undefined}>Support us</a
+      aria-current={isDonationsPage ? "page" : undefined}
+      >{i18n.messages.common.navigation.supportUs}</a
     >
   </nav>
+  <LanguageSwitcher />
 </header>
 
 <main class="site-shell">
@@ -33,9 +52,9 @@
 </main>
 
 <footer class="site-footer">
-  <p>{site.name} · Tbilisi</p>
+  <p>{site.name} · {i18n.messages.common.footer.city}</p>
   <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-    >Events and contact on Telegram</a
+    >{i18n.messages.common.footer.telegramLink}</a
   >
 </footer>
 
@@ -101,9 +120,9 @@
   }
 
   .site-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-between;
     gap: 2rem;
     min-height: 5rem;
     border-bottom: 1px solid var(--soft-slate-line);
@@ -214,15 +233,16 @@
     font-weight: 700;
   }
 
-  @media (max-width: 48rem) {
+  @media (max-width: 64rem) {
     .site-header {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 0;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.35rem 1rem;
       padding-block: 0.75rem;
     }
 
     nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
       justify-content: flex-start;
       gap: 0.65rem;
       width: calc(100% + 1.3rem);

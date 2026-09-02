@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onDestroy } from "svelte";
   import { site } from "$lib/data/site";
+  import { getI18n } from "$lib/i18n.svelte";
 
   type CopyField = "account" | "accountHolder";
   type CopyState = {
@@ -8,22 +9,9 @@
     status: "success" | "error";
   };
 
+  const i18n = getI18n();
   const account = import.meta.env.VITE_DONATION_ACCOUNT ?? "";
   const accountHolder = import.meta.env.VITE_DONATION_ACCOUNT_HOLDER ?? "";
-  const supportUses = [
-    {
-      title: "Care for the apartment",
-      copy: "Support helps with the everyday upkeep of the rooms we share.",
-    },
-    {
-      title: "Pay the rent",
-      copy: "It helps keep Door Blue Space available as a place for the community.",
-    },
-    {
-      title: "Organise events",
-      copy: "It helps us bring films, music, workshops and gatherings into the space.",
-    },
-  ] as const;
 
   let copyState = $state<CopyState | null>(null);
   let copyTimer: ReturnType<typeof setTimeout> | undefined;
@@ -45,30 +33,33 @@
   }
 
   function buttonLabel(field: CopyField) {
-    if (copyState?.field !== field) return "Copy";
-    return copyState.status === "success" ? "Copied" : "Copy manually";
+    if (copyState?.field !== field)
+      return i18n.messages.donations.transfer.copy;
+    return copyState.status === "success"
+      ? i18n.messages.donations.transfer.copied
+      : i18n.messages.donations.transfer.copyManually;
   }
 
   onDestroy(() => clearTimeout(copyTimer));
 </script>
 
 <svelte:head>
-  <title>Support Door Blue Space · Donations</title>
+  <title>{i18n.messages.donations.metadata.title}</title>
   <meta
     name="description"
-    content="Support Door Blue Space with the upkeep of the apartment, rent and community events. Find Bank of Georgia transfer details."
+    content={i18n.messages.donations.metadata.description}
   />
 </svelte:head>
 
 <section class="hero" aria-labelledby="donations-title">
   <div class="hero-copy">
-    <a class="back-link" href="/">Back to the main page</a>
-    <h1 id="donations-title">Support Door Blue Space.</h1>
-    <p>Use the bank details below to make a transfer in Georgian lari.</p>
+    <a class="back-link" href="/">{i18n.messages.donations.hero.backAction}</a>
+    <h1 id="donations-title">{i18n.messages.donations.hero.title}</h1>
+    <p>{i18n.messages.donations.hero.description}</p>
   </div>
 
   <div class="threshold" aria-hidden="true">
-    <span class="threshold-note">A place kept in motion</span>
+    <span class="threshold-note">{i18n.messages.donations.hero.note}</span>
     <div class="door-frame">
       <div class="door">
         <span>Door</span>
@@ -82,29 +73,26 @@
 
 <section class="transfer" aria-labelledby="transfer-title">
   <div class="transfer-heading">
-    <h2 id="transfer-title">Make a bank transfer.</h2>
-    <p>
-      The account is in Georgian lari. Copy the details below, then complete the
-      transfer in your banking app.
-    </p>
+    <h2 id="transfer-title">{i18n.messages.donations.transfer.title}</h2>
+    <p>{i18n.messages.donations.transfer.instructions}</p>
   </div>
 
   <div class="transfer-body">
     {#if account && accountHolder}
       <div class="bank-details">
         <div class="bank-summary">
-          <p>Bank of Georgia</p>
-          <p>GEL · Georgian lari</p>
+          <p>{i18n.messages.donations.transfer.bankName}</p>
+          <p>{i18n.messages.donations.transfer.currency}</p>
         </div>
 
         <dl>
           <div class="detail-row">
-            <dt>Account</dt>
+            <dt>{i18n.messages.donations.transfer.accountLabel}</dt>
             <dd>
               <code>{account}</code>
               <button
                 type="button"
-                aria-label="Copy account number"
+                aria-label={i18n.messages.donations.transfer.copyAccountLabel}
                 onclick={() => copyValue(account, "account")}
               >
                 {buttonLabel("account")}
@@ -113,12 +101,13 @@
           </div>
 
           <div class="detail-row">
-            <dt>Account holder</dt>
+            <dt>{i18n.messages.donations.transfer.accountHolderLabel}</dt>
             <dd>
               <span class="detail-value">{accountHolder}</span>
               <button
                 type="button"
-                aria-label="Copy account holder"
+                aria-label={i18n.messages.donations.transfer
+                  .copyAccountHolderLabel}
                 onclick={() => copyValue(accountHolder, "accountHolder")}
               >
                 {buttonLabel("accountHolder")}
@@ -129,51 +118,48 @@
 
         <p class="copy-status" aria-live="polite">
           {#if copyState?.status === "success"}
-            Copied to your clipboard.
+            {i18n.messages.donations.transfer.copiedStatus}
           {:else if copyState?.status === "error"}
-            Couldn’t copy automatically. Select the value and copy it manually.
+            {i18n.messages.donations.transfer.copyError}
           {/if}
         </p>
       </div>
 
-      <aside class="transfer-notes" aria-label="Transfer fees">
-        <h3>About the fee</h3>
-        <p>Transfers from Bank of Georgia have no fee.</p>
-        <p>Transfers from other banks have a 1 GEL fee.</p>
+      <aside
+        class="transfer-notes"
+        aria-label={i18n.messages.donations.transfer.feesLabel}
+      >
+        <h3>{i18n.messages.donations.transfer.feesTitle}</h3>
+        <p>{i18n.messages.donations.transfer.sameBankFee}</p>
+        <p>{i18n.messages.donations.transfer.otherBankFee}</p>
       </aside>
     {:else}
       <div class="unavailable">
-        <h3>Transfer details are temporarily unavailable.</h3>
-        <p>
-          Message us on Telegram and we’ll send you the current donation
-          details.
-        </p>
+        <h3>{i18n.messages.donations.transfer.unavailableTitle}</h3>
+        <p>{i18n.messages.donations.transfer.unavailableDescription}</p>
         <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-          >Ask for donation details</a
+          >{i18n.messages.donations.transfer.unavailableAction}</a
         >
       </div>
     {/if}
   </div>
 
   <div class="transfer-help">
-    <p>Questions before you transfer?</p>
+    <p>{i18n.messages.donations.transfer.helpPrompt}</p>
     <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-      >Message Door Blue Space on Telegram</a
+      >{i18n.messages.donations.transfer.helpAction}</a
     >
   </div>
 </section>
 
 <section class="support" aria-labelledby="support-title">
   <div class="support-heading">
-    <h2 id="support-title">What your support helps us do.</h2>
-    <p>
-      Every contribution supports the practical work of keeping a creative,
-      shared place running in Tbilisi.
-    </p>
+    <h2 id="support-title">{i18n.messages.donations.support.title}</h2>
+    <p>{i18n.messages.donations.support.description}</p>
   </div>
 
   <div class="support-uses">
-    {#each supportUses as item}
+    {#each i18n.messages.donations.support.items as item}
       <article class="support-use">
         <h3>{item.title}</h3>
         <p>{item.copy}</p>

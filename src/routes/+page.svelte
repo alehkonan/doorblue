@@ -1,50 +1,38 @@
 <script lang="ts">
   import { site } from "$lib/data/site";
+  import { getI18n } from "$lib/i18n.svelte";
 
-  const waypoints = [
-    "Pass the construction site.",
-    "Use the Valeo entrance near the barrier.",
-    "Go up to the fourth floor.",
-    "Turn right.",
-    "Find the blue door.",
-  ] as const;
+  const i18n = getI18n();
 </script>
 
 <svelte:head>
-  <title>{site.name} · Creative apartment in Tbilisi</title>
-  <meta
-    name="description"
-    content="A creatively designed apartment in Tbilisi for events, coworking and community. See current events on Telegram and find the blue door."
-  />
+  <title>{i18n.messages.home.metadata.title}</title>
+  <meta name="description" content={i18n.messages.home.metadata.description} />
 </svelte:head>
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <h1 id="hero-title">Come through the blue door.</h1>
-    <p class="hero-lead">
-      {site.name} is a creatively designed apartment in Tbilisi for films, music,
-      workshops and community gatherings.
-    </p>
+    <h1 id="hero-title">{i18n.messages.home.hero.title}</h1>
+    <p class="hero-lead">{i18n.messages.home.hero.lead}</p>
     <div class="hero-actions">
       <a
         class="primary-action"
         href={site.telegramUrl}
         target="_blank"
-        rel="noreferrer">See what’s happening on Telegram</a
+        rel="noreferrer">{i18n.messages.home.hero.telegramAction}</a
       >
-      <a class="quiet-action" href="#find-us">Find the blue door</a>
+      <a class="quiet-action" href="#find-us"
+        >{i18n.messages.home.hero.directionsAction}</a
+      >
     </div>
-    <p class="hero-note">
-      Events are announced on Telegram. When one is on, you can simply come—no
-      advance registration.
-    </p>
+    <p class="hero-note">{i18n.messages.home.hero.note}</p>
   </div>
 
   <div class="threshold" aria-hidden="true">
     <div class="threshold-route">
-      <span>street</span>
-      <span>fourth floor</span>
-      <span>turn right</span>
+      {#each i18n.messages.home.hero.route as step}
+        <span>{step}</span>
+      {/each}
     </div>
     <div class="door-frame">
       <div class="door">
@@ -57,58 +45,46 @@
 
 <section id="events" class="events" aria-labelledby="events-title">
   <div class="events-intro">
-    <h2 id="events-title">What’s happening lives on Telegram.</h2>
-    <p>
-      Film nights, music, workshops and gatherings are announced there with
-      current dates and details.
-    </p>
+    <h2 id="events-title">{i18n.messages.home.events.title}</h2>
+    <p>{i18n.messages.home.events.description}</p>
   </div>
   <div class="events-action">
-    <p>See something you like? Come by—no advance registration is needed.</p>
+    <p>{i18n.messages.home.events.invitation}</p>
     <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-      >Open the current programme</a
+      >{i18n.messages.home.events.programmeAction}</a
     >
   </div>
 </section>
 
 <section id="use-space" class="uses" aria-labelledby="uses-title">
   <div class="uses-heading">
-    <h2 id="uses-title">The apartment changes with the day.</h2>
-    <p>
-      Events bring people together. On quieter weekdays, the same rooms can
-      become a place to work—or a place for your own gathering.
-    </p>
+    <h2 id="uses-title">{i18n.messages.home.uses.title}</h2>
+    <p>{i18n.messages.home.uses.description}</p>
   </div>
 
   <div class="use-rows">
     <article class="use-row">
       <div>
-        <h3>Cowork here</h3>
-        <p class="use-facts">Weekdays · 10:00–18:00 · By arrangement</p>
+        <h3>{i18n.messages.home.uses.coworking.title}</h3>
+        <p class="use-facts">{i18n.messages.home.uses.coworking.facts}</p>
       </div>
       <div>
-        <p>
-          Write before you come. The apartment may be rented on the day, so
-          coworking availability needs to be confirmed.
-        </p>
+        <p>{i18n.messages.home.uses.coworking.description}</p>
         <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-          >Ask about coworking</a
+          >{i18n.messages.home.uses.coworking.action}</a
         >
       </div>
     </article>
 
     <article class="use-row">
       <div>
-        <h3>Rent the space</h3>
-        <p class="use-facts">Availability · By arrangement</p>
+        <h3>{i18n.messages.home.uses.rental.title}</h3>
+        <p class="use-facts">{i18n.messages.home.uses.rental.facts}</p>
       </div>
       <div>
-        <p>
-          If you would like to use Door Blue Space for your own gathering, write
-          in advance to ask about availability.
-        </p>
+        <p>{i18n.messages.home.uses.rental.description}</p>
         <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-          >Ask about renting</a
+          >{i18n.messages.home.uses.rental.action}</a
         >
       </div>
     </article>
@@ -117,13 +93,13 @@
 
 <section id="find-us" class="journey" aria-labelledby="journey-title">
   <div class="journey-heading">
-    <h2 id="journey-title">The last turn is blue.</h2>
-    <p>{site.address}</p>
+    <h2 id="journey-title">{i18n.messages.home.journey.title}</h2>
+    <p>{i18n.messages.home.journey.address}</p>
   </div>
 
   <div class="journey-body">
     <ol class="waypoints">
-      {#each waypoints as waypoint, index}
+      {#each i18n.messages.home.journey.waypoints as waypoint, index}
         <li>
           <span class="waypoint-number" aria-hidden="true">{index + 1}</span>
           <span>{waypoint}</span>
@@ -139,9 +115,9 @@
         <i></i>
       </div>
       <div class="arrival-copy">
-        <p>Fourth floor. Turn right. You’re there.</p>
+        <p>{i18n.messages.home.journey.arrival}</p>
         <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-          >Need help finding us? Message on Telegram</a
+          >{i18n.messages.home.journey.helpAction}</a
         >
       </div>
     </div>
@@ -149,20 +125,17 @@
 </section>
 
 <section class="closing" aria-labelledby="closing-title">
-  <h2 id="closing-title">We’ll meet you on the other side.</h2>
+  <h2 id="closing-title">{i18n.messages.home.closing.title}</h2>
   <div class="closing-copy">
-    <p>
-      Come to announced events without registering in advance. Arrange coworking
-      or rental before you arrive.
-    </p>
+    <p>{i18n.messages.home.closing.description}</p>
     <div class="closing-actions">
       <a
         class="closing-primary"
         href={site.telegramUrl}
         target="_blank"
-        rel="noreferrer">See events and contact us</a
+        rel="noreferrer">{i18n.messages.home.closing.contactAction}</a
       >
-      <a href="/donations">Support Door Blue Space</a>
+      <a href="/donations">{i18n.messages.home.closing.supportAction}</a>
     </div>
   </div>
 </section>

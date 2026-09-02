@@ -33,8 +33,7 @@ Visitors may attend announced events without registering in advance. Weekday cow
 ## Capabilities and Constraints
 
 - The current website explains the space, provides its address and arrival directions, links to Telegram, and provides donation information.
-- The current public language is English.
-- Russian and Georgian support are planned for the future.
+- The public website supports English, Russian, and Georgian. Russian and Georgian copy is initially draft translation pending native-speaker review.
 - Event booking is a future capability and must not be presented as currently available.
 - The initial website is static and does not use a database.
 - Website event listings depend on future database-backed content.
@@ -66,4 +65,4 @@ The confirmed public identity centers on a creative space in Tbilisi and the dis
 2. **Translate atmosphere into useful context.** The creatively designed apartment is a core part of the experience, while practical information must remain clear.
 3. **Make human contact easy.** Visitors should always have an obvious path to reliable, current information through Telegram.
 4. **Respect the physical journey.** Preserve the exact address and unusual arrival directions wherever visit information appears.
-5. **Present only current capabilities.** Clearly distinguish available information and donations from future multilingual, event-listing, and booking capabilities.
+5. **Present only current capabilities.** Clearly distinguish available information and donations from future event-listing and booking capabilities.
