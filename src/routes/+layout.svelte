@@ -1,7 +1,10 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import { site } from "$lib/data/site";
 
   let { children } = $props();
+
+  const isDonationsPage = $derived(page.url.pathname === "/donations");
 </script>
 
 <svelte:head>
@@ -11,10 +14,17 @@
 <header class="site-header">
   <a class="brand" href="/" aria-label="Door Blue Space home">{site.name}</a>
   <nav aria-label="Main navigation">
-    <a href="/#events">Events</a>
-    <a href="/#use-space">Use the space</a>
-    <a href="/#find-us">Find us</a>
-    <a href="/donations">Donations</a>
+    <div class="section-navigation">
+      <a href="/#events">Events</a>
+      <a href="/#use-space">Use the space</a>
+      <a href="/#find-us">Find us</a>
+    </div>
+    <a
+      class="support-link"
+      class:current={isDonationsPage}
+      href="/donations"
+      aria-current={isDonationsPage ? "page" : undefined}>Support us</a
+    >
   </nav>
 </header>
 
@@ -108,12 +118,20 @@
     text-decoration: none;
   }
 
-  nav {
+  nav,
+  .section-navigation {
     display: flex;
     align-items: center;
+  }
+
+  nav {
     justify-content: flex-end;
-    gap: 0.35rem;
+    gap: 1rem;
     font-size: 0.9rem;
+  }
+
+  .section-navigation {
+    gap: 0.35rem;
   }
 
   nav a,
@@ -125,6 +143,24 @@
 
   nav a {
     padding-inline: 0.65rem;
+    text-decoration: none;
+  }
+
+  nav .support-link {
+    min-height: 2.5rem;
+    padding-inline: 0.9rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 0.7rem;
+    font-weight: 750;
+    transition:
+      color 180ms ease,
+      background 180ms ease;
+  }
+
+  nav .support-link:hover,
+  nav .support-link.current {
+    color: var(--clean-white);
+    background: var(--accent-color);
     text-decoration: none;
   }
 
@@ -188,8 +224,10 @@
 
     nav {
       justify-content: flex-start;
-      width: 100%;
+      gap: 0.65rem;
+      width: calc(100% + 1.3rem);
       margin-inline: -0.65rem;
+      padding-inline: 0.65rem;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -198,7 +236,9 @@
       display: none;
     }
 
+    .section-navigation,
     nav a {
+      flex: 0 0 auto;
       white-space: nowrap;
     }
   }

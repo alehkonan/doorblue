@@ -62,6 +62,7 @@
 
 <section class="hero" aria-labelledby="donations-title">
   <div class="hero-copy">
+    <a class="back-link" href="/">Back to the main page</a>
     <h1 id="donations-title">Support Door Blue Space.</h1>
     <p>Use the bank details below to make a transfer in Georgian lari.</p>
   </div>
@@ -235,6 +236,21 @@
   .hero-copy {
     align-self: center;
     padding-block: 2rem;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    color: var(--secondary-text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-underline-offset: 0.25em;
+  }
+
+  .back-link:hover {
+    color: var(--accent-color);
   }
 
   .hero-copy p {
