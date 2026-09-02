@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-31T21:17:48Z",
+  "generatedAt": "2026-09-02T14:03:46Z",
   "title": "Design System: Door Blue Space",
   "extensions": {
     "colorMeta": {
@@ -311,6 +311,22 @@
       "css": ".ds-primary-action { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0.85rem 1.1rem; border: 1px solid var(--accent-color, #355f91); border-radius: 0.7rem; color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 800; line-height: 1.5; text-decoration: none; transition: color 220ms ease, background 220ms ease; } .ds-primary-action:hover { color: var(--accent-color, #355f91); background: transparent; } .ds-primary-action:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-primary-action { transition: none; } }"
     },
     {
+      "name": "Secondary Action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A warm sand supporting action for donation and other secondary paths.",
+      "html": "<a class=\"ds-secondary-action\" href=\"#\">Support Door Blue Space</a>",
+      "css": ".ds-secondary-action { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.8rem 1rem; border-radius: 0.7rem; color: var(--accent-color, #355f91); background: var(--quiet-periwinkle, #d9b995); font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.5; text-decoration: none; } .ds-secondary-action:hover { text-decoration: underline; } .ds-secondary-action:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; }"
+    },
+    {
+      "name": "Copy Control",
+      "kind": "button",
+      "refersTo": "button-copy",
+      "description": "A compact outlined control for copying donation account details, with a direct cobalt color reversal on hover.",
+      "html": "<button class=\"ds-copy-control\" type=\"button\">Copy</button>",
+      "css": ".ds-copy-control { min-width: 6.5rem; min-height: 2.75rem; padding: 0.55rem 0.7rem; border: 1px solid var(--accent-color, #355f91); border-radius: 0.5rem; color: var(--accent-color, #355f91); background: transparent; cursor: pointer; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.85rem; font-weight: 800; line-height: 1.5; transition: color 180ms ease, background 180ms ease; } .ds-copy-control:hover { color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); } .ds-copy-control:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-copy-control { transition: none; } }"
+    },
+    {
       "name": "Quiet Action Link",
       "kind": "button",
       "description": "A strong underlined secondary path with the shipped 44px minimum target.",
@@ -338,6 +354,14 @@
       "description": "An open ruled row for coworking or rental facts; it stays split at tablet widths and becomes linear at 38rem.",
       "html": "<article class=\"ds-use-row\"><div><h3>Cowork here</h3><p class=\"ds-use-facts\">Weekdays · 10:00–18:00 · By arrangement</p></div><div><p>Write before you come. The apartment may be rented on the day, so coworking availability needs to be confirmed.</p><a href=\"#\">Ask about coworking</a></div></article>",
       "css": ".ds-use-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(18rem, 7fr); gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(2rem, 5vw, 4rem); border-top: 1px solid var(--accent-color, #355f91); border-bottom: 1px solid var(--accent-color, #355f91); color: var(--accent-color, #355f91); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-use-row h3 { margin: 0 0 0.75rem; font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; } .ds-use-row > div:last-child { max-width: 38rem; } .ds-use-row > div:last-child p { margin: 0 0 1.25rem; color: var(--secondary-text, #526a76); font-size: 1.05rem; line-height: 1.65; } .ds-use-facts { margin: 0; color: var(--secondary-text, #526a76); font-size: 0.85rem; font-weight: 800; line-height: 1.5; text-transform: uppercase; } .ds-use-row a { display: inline-flex; align-items: center; min-height: 2.75rem; color: inherit; font-weight: 800; text-underline-offset: 0.22em; text-decoration-thickness: 0.08em; } .ds-use-row a:hover { text-decoration: underline; } .ds-use-row a:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (max-width: 52rem) { .ds-use-row { grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); } } @media (max-width: 38rem) { .ds-use-row { grid-template-columns: 1fr; gap: 1.25rem; padding-block: 2.5rem; } }"
+    },
+    {
+      "name": "Donation Panel",
+      "kind": "card",
+      "refersTo": "donation-panel",
+      "description": "The soft peach exception for bank details: rounded, practical, and internally divided rather than shadowed.",
+      "html": "<section class=\"ds-donation-panel\"><div class=\"ds-donation-heading\"><h3>Bank of Georgia</h3><span>GEL · Georgian lari</span></div><dl><div><dt>Account</dt><dd><code>GE00BG0000000000000000</code><button type=\"button\">Copy</button></dd></div></dl></section>",
+      "css": ".ds-donation-panel { padding: 2rem; border-radius: 1rem; color: var(--accent-color, #355f91); background: var(--apartment-blue-haze, #e8d8c5); font-family: Inter, ui-sans-serif, system-ui, sans-serif; } .ds-donation-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; padding-bottom: 2rem; } .ds-donation-heading h3 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.75rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1; } .ds-donation-heading span, .ds-donation-panel dt { color: var(--secondary-text, #526a76); font-size: 0.85rem; font-weight: 800; line-height: 1.5; text-transform: uppercase; } .ds-donation-panel dl { margin: 0; border-bottom: 1px solid var(--soft-slate-line, #cdbdaa); } .ds-donation-panel dl > div { padding-block: 1.4rem; border-top: 1px solid var(--soft-slate-line, #cdbdaa); } .ds-donation-panel dt { margin-bottom: 0.6rem; } .ds-donation-panel dd { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: center; margin: 0; } .ds-donation-panel code { min-width: 0; color: inherit; font: inherit; font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 700; overflow-wrap: anywhere; } .ds-donation-panel button { min-width: 6.5rem; min-height: 2.75rem; padding: 0.55rem 0.7rem; border: 1px solid var(--accent-color, #355f91); border-radius: 0.5rem; color: inherit; background: transparent; cursor: pointer; font: inherit; font-size: 0.85rem; font-weight: 800; } .ds-donation-panel button:hover { color: var(--clean-white, #fff9ef); background: var(--accent-color, #355f91); } .ds-donation-panel button:focus-visible { outline: 3px solid var(--accent-color, #355f91); outline-offset: 4px; } @media (max-width: 32rem) { .ds-donation-panel { padding: 1.25rem; } .ds-donation-panel dd { grid-template-columns: 1fr; } .ds-donation-panel button { width: 100%; } }"
     },
     {
       "name": "Route Steps",
@@ -392,7 +416,7 @@
       },
       {
         "name": "The Small Type Must Guide Rule",
-        "body": "The intentional 0.72rem and 0.85rem sizes belong to redundant route cues and compact facts; actions retain readable labels and at least 2.75rem-high targets.",
+        "body": "The intentional `0.72rem` and `0.85rem` sizes belong to redundant route cues and compact facts; actions retain readable labels and at least `2.75rem`-high targets.",
         "section": "typography"
       },
       {
@@ -426,7 +450,7 @@
       "Do use Muted Cobalt Door, Night Threshold, Warm Ivory Paper, peach and sand architecture, Warm White alpha, and blue-gray supporting tones as one restrained watercolor-interior palette.",
       "Do use asymmetric desktop grids that become an intentional single reading path at the documented breakpoints.",
       "Do preserve the exact route-step order, connected markers, and final blue-door payoff when presenting arrival directions.",
-      "Do keep all interactive targets at least 2.75rem high and retain the 3px/4px focus treatment.",
+      "Do keep all interactive targets at least `2.75rem` high and retain the `3px`/`4px` focus treatment.",
       "Do keep content fully understandable when motion is reduced or unavailable."
     ],
     "donts": [
