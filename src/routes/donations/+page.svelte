@@ -169,10 +169,6 @@
 </section>
 
 <style>
-  :global(body) {
-    overflow-x: hidden;
-  }
-
   h1,
   h2,
   h3,
@@ -220,6 +216,7 @@
   }
 
   .hero-copy {
+    min-width: 0;
     align-self: center;
     padding-block: 2rem;
   }
@@ -588,6 +585,10 @@
     h1 {
       max-width: 12ch;
       font-size: clamp(3.25rem, 17vw, 4.6rem);
+    }
+
+    :global(html[lang="ru"]) h1 {
+      font-size: clamp(2.75rem, 14.25vw, 4.6rem);
     }
 
     h2 {
