@@ -30,7 +30,10 @@
     href="/"
     aria-label={i18n.messages.common.navigation.brandHomeLabel}>{site.name}</a
   >
-  <nav aria-label={i18n.messages.common.navigation.mainLabel}>
+  <nav
+    class="primary-navigation"
+    aria-label={i18n.messages.common.navigation.mainLabel}
+  >
     <div class="section-navigation">
       <a href="/#events">{i18n.messages.common.navigation.events}</a>
       <a href="/#use-space">{i18n.messages.common.navigation.useSpace}</a>
@@ -53,9 +56,17 @@
 
 <footer class="site-footer">
   <p>{site.name} · {i18n.messages.common.footer.city}</p>
-  <a href={site.telegramUrl} target="_blank" rel="noreferrer"
-    >{i18n.messages.common.footer.telegramLink}</a
+  <nav
+    class="social-links"
+    aria-label={i18n.messages.common.footer.socialLinksLabel}
   >
+    <a href={site.links.instagram} target="_blank" rel="me noreferrer"
+      >{i18n.messages.common.footer.instagramLink}</a
+    >
+    <a href={site.links.announcements} target="_blank" rel="me noreferrer"
+      >{i18n.messages.common.footer.telegramAnnouncementsLink}</a
+    >
+  </nav>
 </footer>
 
 <style>
@@ -137,13 +148,14 @@
     text-decoration: none;
   }
 
-  nav,
-  .section-navigation {
+  .primary-navigation,
+  .section-navigation,
+  .social-links {
     display: flex;
     align-items: center;
   }
 
-  nav {
+  .primary-navigation {
     justify-content: flex-end;
     gap: 1rem;
     font-size: 0.9rem;
@@ -153,19 +165,19 @@
     gap: 0.35rem;
   }
 
-  nav a,
+  .primary-navigation a,
   .site-footer a {
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;
   }
 
-  nav a {
+  .primary-navigation a {
     padding-inline: 0.65rem;
     text-decoration: none;
   }
 
-  nav .support-link {
+  .primary-navigation .support-link {
     min-height: 2.5rem;
     padding-inline: 0.9rem;
     border: 1px solid var(--accent-color);
@@ -176,14 +188,14 @@
       background 180ms ease;
   }
 
-  nav .support-link:hover,
-  nav .support-link.current {
+  .primary-navigation .support-link:hover,
+  .primary-navigation .support-link.current {
     color: var(--clean-white);
     background: var(--accent-color);
     text-decoration: none;
   }
 
-  nav a:hover,
+  .primary-navigation a:hover,
   .site-footer a:hover,
   :global(.text-link:hover) {
     text-decoration: underline;
@@ -205,6 +217,11 @@
 
   .site-footer p {
     margin: 0;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+    gap: 1.5rem;
   }
 
   .site-footer a {
@@ -240,7 +257,7 @@
       padding-block: 0.75rem;
     }
 
-    nav {
+    .primary-navigation {
       grid-column: 1 / -1;
       grid-row: 2;
       justify-content: flex-start;
@@ -252,12 +269,12 @@
       scrollbar-width: none;
     }
 
-    nav::-webkit-scrollbar {
+    .primary-navigation::-webkit-scrollbar {
       display: none;
     }
 
     .section-navigation,
-    nav a {
+    .primary-navigation a {
       flex: 0 0 auto;
       white-space: nowrap;
     }
@@ -274,6 +291,12 @@
       justify-content: center;
       gap: 0.25rem;
       padding-block: 1.25rem;
+    }
+
+    .social-links {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 0 1.25rem;
     }
   }
 

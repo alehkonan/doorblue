@@ -17,15 +17,21 @@ cp .env.example .env
 npm run dev
 ```
 
-Set the donation details in `.env`:
+Set the public donation and contact details in `.env`:
 
 ```sh
 VITE_DONATION_ACCOUNT="your-donation-account"
 VITE_DONATION_ACCOUNT_HOLDER="your-account-holder"
+VITE_TELEGRAM_CONTACT="https://t.me/your-contact"
 ```
 
+The contact value is used for direct questions about coworking, rental, directions,
+and donations. When it is not configured, contact links fall back to the public
+Instagram profile.
+
 The `VITE_` prefix makes these values available to the public client bundle. They are
-not secret credentials; the values are displayed on the donations page.
+not secret credentials; the donation values are displayed on the donations page and
+the Telegram URL is used in public links.
 
 Local Worker runtime:
 

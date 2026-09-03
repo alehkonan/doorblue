@@ -14,7 +14,9 @@
     },
     "footer": {
       "city": "Tbilisi",
-      "telegramLink": "Events and contact on Telegram"
+      "socialLinksLabel": "Door Blue Space social links",
+      "instagramLink": "Instagram",
+      "telegramAnnouncementsLink": "Announcements on Telegram"
     }
   },
   "home": {
@@ -28,11 +30,7 @@
       "telegramAction": "See what’s happening on Telegram",
       "directionsAction": "Find the blue door",
       "note": "Events are announced on Telegram. When one is on, you can simply come—no advance registration.",
-      "route": [
-        "street",
-        "fourth floor",
-        "turn right"
-      ]
+      "route": ["street", "fourth floor", "turn right"]
     },
     "events": {
       "title": "What’s happening lives on Telegram.",
@@ -67,12 +65,12 @@
         "Find the blue door."
       ],
       "arrival": "Fourth floor. Turn right. You’re there.",
-      "helpAction": "Need help finding us? Message on Telegram"
+      "helpAction": "Need help finding us? Contact us"
     },
     "closing": {
       "title": "We’ll meet you on the other side.",
       "description": "Come to announced events without registering in advance. Arrange coworking or rental before you arrive.",
-      "contactAction": "See events and contact us",
+      "contactAction": "Contact us",
       "supportAction": "Support Door Blue Space"
     }
   },
@@ -106,10 +104,10 @@
       "sameBankFee": "Transfers from Bank of Georgia have no fee.",
       "otherBankFee": "Transfers from other banks have a 1 GEL fee.",
       "unavailableTitle": "Transfer details are temporarily unavailable.",
-      "unavailableDescription": "Message us on Telegram and we’ll send you the current donation details.",
+      "unavailableDescription": "Contact us and we’ll send you the current donation details.",
       "unavailableAction": "Ask for donation details",
       "helpPrompt": "Questions before you transfer?",
-      "helpAction": "Message Door Blue Space on Telegram"
+      "helpAction": "Contact Door Blue Space"
     },
     "support": {
       "title": "What your support helps us do.",

@@ -17,7 +17,7 @@
     <div class="hero-actions">
       <a
         class="primary-action"
-        href={site.telegramUrl}
+        href={site.links.announcements}
         target="_blank"
         rel="noreferrer">{i18n.messages.home.hero.telegramAction}</a
       >
@@ -50,7 +50,7 @@
   </div>
   <div class="events-action">
     <p>{i18n.messages.home.events.invitation}</p>
-    <a href={site.telegramUrl} target="_blank" rel="noreferrer"
+    <a href={site.links.announcements} target="_blank" rel="noreferrer"
       >{i18n.messages.home.events.programmeAction}</a
     >
   </div>
@@ -70,7 +70,7 @@
       </div>
       <div>
         <p>{i18n.messages.home.uses.coworking.description}</p>
-        <a href={site.telegramUrl} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="noreferrer"
           >{i18n.messages.home.uses.coworking.action}</a
         >
       </div>
@@ -83,7 +83,7 @@
       </div>
       <div>
         <p>{i18n.messages.home.uses.rental.description}</p>
-        <a href={site.telegramUrl} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="noreferrer"
           >{i18n.messages.home.uses.rental.action}</a
         >
       </div>
@@ -116,7 +116,7 @@
       </div>
       <div class="arrival-copy">
         <p>{i18n.messages.home.journey.arrival}</p>
-        <a href={site.telegramUrl} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="noreferrer"
           >{i18n.messages.home.journey.helpAction}</a
         >
       </div>
@@ -131,7 +131,7 @@
     <div class="closing-actions">
       <a
         class="closing-primary"
-        href={site.telegramUrl}
+        href={site.links.contact}
         target="_blank"
         rel="noreferrer">{i18n.messages.home.closing.contactAction}</a
       >

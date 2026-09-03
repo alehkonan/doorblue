@@ -137,7 +137,7 @@
       <div class="unavailable">
         <h3>{i18n.messages.donations.transfer.unavailableTitle}</h3>
         <p>{i18n.messages.donations.transfer.unavailableDescription}</p>
-        <a href={site.telegramUrl} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="noreferrer"
           >{i18n.messages.donations.transfer.unavailableAction}</a
         >
       </div>
@@ -146,7 +146,7 @@
 
   <div class="transfer-help">
     <p>{i18n.messages.donations.transfer.helpPrompt}</p>
-    <a href={site.telegramUrl} target="_blank" rel="noreferrer"
+    <a href={site.links.contact} target="_blank" rel="noreferrer"
       >{i18n.messages.donations.transfer.helpAction}</a
     >
   </div>
