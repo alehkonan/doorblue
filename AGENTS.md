@@ -10,6 +10,7 @@
 
 # Development workflow
 
+- Run exactly one executable command per `terminal` invocation. Send sequential commands in separate calls rather than chaining them with `&&`, `;`, pipes, or command substitution, so allowlisted operations run immediately and permission prompts describe one auditable action whose risks can be understood before allowlisting.
 - The development server runs at `http://localhost:4015`.
 - Before browser or UI verification that needs the server, probe that URL and reuse the existing server when it is reachable.
 - If the URL is unreachable, report that result and offer to start the development server on port `4015`; start it only after the user agrees.
