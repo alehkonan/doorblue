@@ -4,6 +4,7 @@
 - Use SvelteKit filesystem routing under `src/routes` and shared modules under `src/lib`; prefer existing `$lib` imports and project patterns over new abstractions.
 - Deploy to Cloudflare Workers with `@sveltejs/adapter-cloudflare` and Wrangler. Keep server code compatible with the Cloudflare runtime; use Node-only APIs only when they are supported by the configured `nodejs_compat` flag.
 - Use Node.js 24 and npm. Treat `package-lock.json` as the dependency source of truth and prefer existing dependencies before adding packages.
+- Prefer built-in APIs from the language, runtime, framework, and standard library when they cover the requirement. Check Node.js 24 and Web Platform capabilities before adding a dependency or implementing a custom utility.
 - Style components with scoped Svelte CSS and the shared custom properties defined by the root layout. The project does not use Tailwind or a component framework.
 - Public UI supports English, Russian, and Georgian through the existing `$lib/i18n` implementation. When changing public copy, update every locale and verify layouts with the longest translations.
 
@@ -13,4 +14,4 @@
 - Before browser or UI verification that needs the server, probe that URL and reuse the existing server when it is reachable.
 - If the URL is unreachable, report that result and offer to start the development server on port `4015`; start it only after the user agrees.
 - Run `npm run check` for Svelte and TypeScript diagnostics. Run `npm run build` when validating production or Cloudflare-related changes.
-- Use Conventional Commits for commit messages and split unrelated changes into separate commits by feature or concern.
+- Before committing, inspect the complete staged and unstaged diff and account for every changed hunk by its reason. Stage cohesive, reviewable commits by feature or concern; separate configuration, tooling, refactors, and product behavior when their reasons differ. Use Conventional Commits for commit messages.
