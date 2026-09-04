@@ -33,12 +33,45 @@ The `VITE_` prefix makes these values available to the public client bundle. The
 not secret credentials; the donation values are displayed on the donations page and
 the Telegram URL is used in public links.
 
-Local Worker runtime:
+The Telegram bot uses private values without the `VITE_` prefix. Add them to `.env`
+for local SvelteKit development:
 
 ```sh
+TELEGRAM_BOT_TOKEN="replace-with-your-bot-token"
+TELEGRAM_WEBHOOK_SECRET="replace-with-a-random-secret"
+```
+
+Generate a webhook secret containing only characters accepted by Telegram:
+
+```sh
+openssl rand -hex 32
+```
+
+Do not commit either value. `TELEGRAM_BOT_TOKEN` authorizes outgoing Bot API calls;
+`TELEGRAM_WEBHOOK_SECRET` authenticates incoming webhook requests.
+
+Local Worker runtime uses `.dev.vars` instead of `.env`:
+
+```sh
+cp .dev.vars.example .dev.vars
 npm run build
 npx wrangler dev
 ```
+
+Telegram requires a public HTTPS webhook URL, so it cannot deliver updates directly
+to `localhost`. The handler can still be tested locally with `npm test`. An authenticated
+update that intentionally requires no bot response can also be sent to the development
+server:
+
+```sh
+curl --request POST http://localhost:4015/api/telegram/webhook \
+  --header 'content-type: application/json' \
+  --header 'x-telegram-bot-api-secret-token: replace-with-your-webhook-secret' \
+  --data '{"update_id":1,"message":{"from":{"id":1,"is_bot":false,"language_code":"en"},"chat":{"id":1,"type":"private"},"text":"Hello"}}'
+```
+
+Use a separate development bot and a public tunnel or staging Worker if real Telegram
+delivery needs to be tested without replacing the production bot's webhook.
 
 ## Localization
 
@@ -67,9 +100,40 @@ wrangler secret put TELEGRAM_BOT_TOKEN
 wrangler secret put TELEGRAM_WEBHOOK_SECRET
 ```
 
-The initial Telegram endpoint is `POST /api/telegram/webhook`. It validates Telegram's
-`X-Telegram-Bot-Api-Secret-Token` header when `TELEGRAM_WEBHOOK_SECRET` is configured,
-acknowledges the update, and leaves bot processing for the next slice.
+## Telegram bot
+
+The Telegram endpoint is `POST /api/telegram/webhook`. It requires Telegram's
+`X-Telegram-Bot-Api-Secret-Token` header and responds only to `/start` messages in
+private chats. The greeting follows the visitor's Telegram language (`en`, `ru`, or
+`ka`, with English as the fallback). All other updates are acknowledged without a bot
+response.
+
+After the Worker is deployed, register its webhook once from a machine whose `.env`
+contains `TELEGRAM_BOT_TOKEN` and `TELEGRAM_WEBHOOK_SECRET`:
+
+```sh
+npm run telegram:webhook:set -- https://example.com
+```
+
+Telegram stores this configuration and sends subsequent updates directly to the Worker.
+Changing bot response code only requires another deploy. Run `setWebhook` again only
+when the webhook URL, `TELEGRAM_WEBHOOK_SECRET`, or `allowed_updates` changes.
+
+Pending updates are preserved by default. Discard them explicitly for a clean start:
+
+```sh
+npm run telegram:webhook:set -- https://example.com --drop-pending-updates
+```
+
+Inspect Telegram's stored webhook status or disable delivery with:
+
+```sh
+npm run telegram:webhook:info
+npm run telegram:webhook:delete
+```
+
+`telegram:webhook:delete` also accepts `--drop-pending-updates` when the queued updates
+should be discarded intentionally.
 
 The external database is intentionally not provisioned by this project. Add a database
 client and optionally Cloudflare Hyperdrive after the database connection strategy is

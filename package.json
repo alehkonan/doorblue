@@ -7,13 +7,18 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check",
+    "test": "node --test src/**/*.test.ts",
     "login": "wrangler login",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "telegram:webhook:set": "node scripts/telegram-webhook.js set",
+    "telegram:webhook:info": "node scripts/telegram-webhook.js info",
+    "telegram:webhook:delete": "node scripts/telegram-webhook.js delete"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^5.20260831.1",
     "@sveltejs/adapter-cloudflare": "^7.2.9",
     "@sveltejs/kit": "^2.70.3",
+    "@types/node": "^24.13.3",
     "svelte": "^5.57.0",
     "svelte-check": "^4.7.6",
     "typescript": "^6.0.3",
