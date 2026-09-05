@@ -115,7 +115,7 @@
       role="menu"
       aria-label={i18n.messages.common.language.label}
     >
-      {#each localeOptions as option, index}
+      {#each localeOptions as option, index (option.code)}
         <button
           type="button"
           role="menuitemradio"

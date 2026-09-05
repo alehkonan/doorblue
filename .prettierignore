@@ -1,0 +1,6 @@
+.agents
+.svelte-kit
+build
+dist
+.wrangler
+node_modules

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { onDestroy } from "svelte";
   import { site } from "$lib/data/site";
   import { getI18n } from "$lib/i18n.svelte";
@@ -53,7 +54,9 @@
 
 <section class="hero" aria-labelledby="donations-title">
   <div class="hero-copy">
-    <a class="back-link" href="/">{i18n.messages.donations.hero.backAction}</a>
+    <a class="back-link" href={resolve("/")}
+      >{i18n.messages.donations.hero.backAction}</a
+    >
     <h1 id="donations-title">{i18n.messages.donations.hero.title}</h1>
     <p>{i18n.messages.donations.hero.description}</p>
   </div>
@@ -137,7 +140,7 @@
       <div class="unavailable">
         <h3>{i18n.messages.donations.transfer.unavailableTitle}</h3>
         <p>{i18n.messages.donations.transfer.unavailableDescription}</p>
-        <a href={site.links.contact} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="external noreferrer"
           >{i18n.messages.donations.transfer.unavailableAction}</a
         >
       </div>
@@ -146,7 +149,7 @@
 
   <div class="transfer-help">
     <p>{i18n.messages.donations.transfer.helpPrompt}</p>
-    <a href={site.links.contact} target="_blank" rel="noreferrer"
+    <a href={site.links.contact} target="_blank" rel="external noreferrer"
       >{i18n.messages.donations.transfer.helpAction}</a
     >
   </div>
@@ -159,7 +162,7 @@
   </div>
 
   <div class="support-uses">
-    {#each i18n.messages.donations.support.items as item}
+    {#each i18n.messages.donations.support.items as item (item.title)}
       <article class="support-use">
         <h3>{item.title}</h3>
         <p>{item.copy}</p>

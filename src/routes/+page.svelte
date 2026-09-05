@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
   import { site } from "$lib/data/site";
   import { getI18n } from "$lib/i18n.svelte";
 
@@ -19,7 +20,7 @@
         class="primary-action"
         href={site.links.announcements}
         target="_blank"
-        rel="noreferrer">{i18n.messages.home.hero.telegramAction}</a
+        rel="external noreferrer">{i18n.messages.home.hero.telegramAction}</a
       >
       <a class="quiet-action" href="#find-us"
         >{i18n.messages.home.hero.directionsAction}</a
@@ -30,7 +31,7 @@
 
   <div class="threshold" aria-hidden="true">
     <div class="threshold-route">
-      {#each i18n.messages.home.hero.route as step}
+      {#each i18n.messages.home.hero.route as step (step)}
         <span>{step}</span>
       {/each}
     </div>
@@ -50,7 +51,7 @@
   </div>
   <div class="events-action">
     <p>{i18n.messages.home.events.invitation}</p>
-    <a href={site.links.announcements} target="_blank" rel="noreferrer"
+    <a href={site.links.announcements} target="_blank" rel="external noreferrer"
       >{i18n.messages.home.events.programmeAction}</a
     >
   </div>
@@ -70,7 +71,7 @@
       </div>
       <div>
         <p>{i18n.messages.home.uses.coworking.description}</p>
-        <a href={site.links.contact} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="external noreferrer"
           >{i18n.messages.home.uses.coworking.action}</a
         >
       </div>
@@ -83,7 +84,7 @@
       </div>
       <div>
         <p>{i18n.messages.home.uses.rental.description}</p>
-        <a href={site.links.contact} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="external noreferrer"
           >{i18n.messages.home.uses.rental.action}</a
         >
       </div>
@@ -99,7 +100,7 @@
 
   <div class="journey-body">
     <ol class="waypoints">
-      {#each i18n.messages.home.journey.waypoints as waypoint, index}
+      {#each i18n.messages.home.journey.waypoints as waypoint, index (waypoint)}
         <li>
           <span class="waypoint-number" aria-hidden="true">{index + 1}</span>
           <span>{waypoint}</span>
@@ -116,7 +117,7 @@
       </div>
       <div class="arrival-copy">
         <p>{i18n.messages.home.journey.arrival}</p>
-        <a href={site.links.contact} target="_blank" rel="noreferrer"
+        <a href={site.links.contact} target="_blank" rel="external noreferrer"
           >{i18n.messages.home.journey.helpAction}</a
         >
       </div>
@@ -133,9 +134,11 @@
         class="closing-primary"
         href={site.links.contact}
         target="_blank"
-        rel="noreferrer">{i18n.messages.home.closing.contactAction}</a
+        rel="external noreferrer">{i18n.messages.home.closing.contactAction}</a
       >
-      <a href="/donations">{i18n.messages.home.closing.supportAction}</a>
+      <a href={resolve("/donations")}
+        >{i18n.messages.home.closing.supportAction}</a
+      >
     </div>
   </div>
 </section>

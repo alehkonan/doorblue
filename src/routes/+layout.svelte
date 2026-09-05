@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/state";
+  import { resolve } from "$app/paths";
   import { onMount, type Snippet } from "svelte";
   import LanguageSwitcher from "$lib/components/LanguageSwitcher.svelte";
   import { site } from "$lib/data/site";
@@ -27,7 +28,7 @@
 <header class="site-header">
   <a
     class="brand"
-    href="/"
+    href={resolve("/")}
     aria-label={i18n.messages.common.navigation.brandHomeLabel}>{site.name}</a
   >
   <nav
@@ -35,14 +36,17 @@
     aria-label={i18n.messages.common.navigation.mainLabel}
   >
     <div class="section-navigation">
-      <a href="/#events">{i18n.messages.common.navigation.events}</a>
-      <a href="/#use-space">{i18n.messages.common.navigation.useSpace}</a>
-      <a href="/#find-us">{i18n.messages.common.navigation.findUs}</a>
+      <a href={resolve("/#events")}>{i18n.messages.common.navigation.events}</a>
+      <a href={resolve("/#use-space")}
+        >{i18n.messages.common.navigation.useSpace}</a
+      >
+      <a href={resolve("/#find-us")}>{i18n.messages.common.navigation.findUs}</a
+      >
     </div>
     <a
       class="support-link"
       class:current={isDonationsPage}
-      href="/donations"
+      href={resolve("/donations")}
       aria-current={isDonationsPage ? "page" : undefined}
       >{i18n.messages.common.navigation.supportUs}</a
     >
@@ -60,10 +64,13 @@
     class="social-links"
     aria-label={i18n.messages.common.footer.socialLinksLabel}
   >
-    <a href={site.links.instagram} target="_blank" rel="me noreferrer"
+    <a href={site.links.instagram} target="_blank" rel="external me noreferrer"
       >{i18n.messages.common.footer.instagramLink}</a
     >
-    <a href={site.links.announcements} target="_blank" rel="me noreferrer"
+    <a
+      href={site.links.announcements}
+      target="_blank"
+      rel="external me noreferrer"
       >{i18n.messages.common.footer.telegramAnnouncementsLink}</a
     >
   </nav>
